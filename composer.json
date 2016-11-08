@@ -1,0 +1,23 @@
+{
+    "name": "glavweb/silex-cms-composite-object",
+    "description": "GLAVWEB.cms SilexCmsCompositeObject package",
+    "authors": [
+        {
+            "name": "nilov",
+            "email": "nilov@glavweb.ru",
+            "homepage": "http://glavweb.ru"
+        },
+        {
+            "name": "GLAVWEB Community",
+            "homepage": "https://github.com/glavweb/silex-cms-composite-object/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "pimple/pimple": "~3.0",
+        "glavweb/cms-content-block": "~0.1"
+    },
+    "autoload": {
+        "psr-4": { "Glavweb\\SilexCmsCompositeObject\\": "src/" }
+    }
+}
