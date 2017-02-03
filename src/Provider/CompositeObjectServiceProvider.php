@@ -11,6 +11,7 @@
 
 namespace Glavweb\SilexCmsCompositeObject\Provider;
 
+use Glavweb\CmsCompositeObject\Helper\MarkupFixtureHelper;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use Glavweb\CmsCompositeObject\Service\CompositeObjectService;
@@ -29,8 +30,13 @@ class CompositeObjectServiceProvider implements ServiceProviderInterface
     public function register(Container $app)
     {
         $app['composite_object_service'] = function () use ($app) {
+            $markupFixtureHelper = new MarkupFixtureHelper($app['base_path']);
+
             return new CompositeObjectService(
-                $app['cms_rest_client']
+                $app['cms_rest_client'],
+                $markupFixtureHelper,
+                $app['markup_mode'],
+                $app['fixture_objects']
             );
         };
     }
